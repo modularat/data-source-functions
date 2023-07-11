@@ -49,8 +49,6 @@ namespace Plumsail.DataSource.SharePoint
                 .GetAsync();
             var items = new List<ListItem>(itemsPage);
 
-            log.LogInformation(items.toString());
-
             while (itemsPage.NextPageRequest != null)
             {
                 itemsPage = await itemsPage.NextPageRequest.GetAsync();
